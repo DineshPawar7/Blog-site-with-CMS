@@ -1,0 +1,36 @@
+---
+title: My homepage
+layout: 'base.njk'
+---
+
+
+    <section class="hero">
+      <div class="container flow">
+        <div class="hero__content flow">
+          <h1 class="section-title">Welcome to my Blog</h1>
+          <p>Dive into a wealth of health tips, tricks, and information designed to boost your well-being</p>
+          <div class="flex-group">
+            <a href="#featured-articles" class="btn btn--primary">Featured articles</a>
+            <a href="./blog" class="btn btn--neutral">Most recent articles</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://cdn.mos.cms.futurecdn.net/x8oyLJtDJBPmL59WUoa36C.jpg" alt="" class="hero__image">
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-articles" class="featured-articles">
+      <div class="container flow">
+        <h2 class="section-title text-center ">Featured articles</h2>
+        <p class="text-center">watch recent articles</p>
+        <ul role="list" class="articles__list flow">
+
+          {% for post in collections.featured | reverse -%}
+          {% include 'article-snippet.njk' %}
+          {% endfor %}
+      </div>
+    </section>
+  
+  
+
